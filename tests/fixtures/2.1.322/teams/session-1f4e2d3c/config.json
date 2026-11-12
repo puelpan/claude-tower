@@ -1,0 +1,24 @@
+{
+  "name": "session-1f4e2d3c",
+  "createdAt": 1794368661000,
+  "leadAgentId": "team-lead@session-1f4e2d3c",
+  "leadSessionId": "1f4e2d3c-5b6a-4c7d-8e9f-0a1b2c3d4e5f",
+  "leadProcess": {
+    "pid": 1228510,
+    "pidSpace": "host#pid:[4000000000]",
+    "claimedAt": 1794368661000,
+    "procStart": "13982212"
+  },
+  "members": [
+    {
+      "agentId": "team-lead@session-1f4e2d3c",
+      "name": "team-lead",
+      "agentType": "team-lead",
+      "joinedAt": 1794368661000,
+      "tmuxPaneId": "leader",
+      "cwd": "/home/me/projects/shop-api",
+      "subscriptions": [],
+      "backendType": "in-process"
+    }
+  ]
+}

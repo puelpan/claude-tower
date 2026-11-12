@@ -1,0 +1,44 @@
+{
+  "name": "session-7c1e5a90",
+  "createdAt": 1794370001000,
+  "leadAgentId": "team-lead@session-7c1e5a90",
+  "leadSessionId": "7c1e5a90-0000-4000-8000-000000000001",
+  "leadProcess": {
+    "pid": 1230001,
+    "pidSpace": "host#pid:[4000000000]",
+    "claimedAt": 1794370001000,
+    "procStart": "14000100"
+  },
+  "members": [
+    {
+      "agentId": "team-lead@session-7c1e5a90",
+      "name": "team-lead",
+      "agentType": "team-lead",
+      "joinedAt": 1794370001000,
+      "tmuxPaneId": "leader",
+      "cwd": "/home/me/projects/web-front/.claude/worktrees/feat-x",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "reviewer@session-7c1e5a90",
+      "name": "reviewer",
+      "agentType": "general-purpose",
+      "joinedAt": 1794370200000,
+      "tmuxPaneId": "in-process",
+      "cwd": "/home/me/projects/web-front/.claude/worktrees/feat-x",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "api-tests@session-7c1e5a90",
+      "name": "api-tests",
+      "agentType": "general-purpose",
+      "joinedAt": 1794370300000,
+      "tmuxPaneId": "%55",
+      "cwd": "/home/me/projects/web-front",
+      "subscriptions": [],
+      "backendType": "tmux"
+    }
+  ]
+}
