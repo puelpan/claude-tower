@@ -2,6 +2,9 @@
 name = "claude-tower"
 version = "0.1.0"
 edition = "2024"
+description = "A control tower for Claude Code instances running in tmux"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/puelpan/claude-tower"
 
 [dependencies]
 anyhow = "1.0.104"
