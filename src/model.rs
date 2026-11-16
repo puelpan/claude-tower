@@ -9,7 +9,7 @@ use std::path::{Path, PathBuf};
 use serde::{Deserialize, Serialize};
 
 /// The newest Claude Code version whose files were checked against §3.
-pub const VERIFIED_VERSION: &str = "2.1.322";
+pub const VERIFIED_VERSION: &str = "2.1.323";
 
 /// Group mode (§5), cycled with `g`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default, Serialize, Deserialize)]

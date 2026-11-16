@@ -1,6 +1,6 @@
 # claude-tower — Specification
 
-Status: v1 implemented (milestones 1–3), plus a card view (§6.1) · 2026-11-11 · data formats checked against Claude Code 2.1.322
+Status: v1 implemented (milestones 1–3), plus a card view (§6.1) · 2026-11-11 · data formats checked against Claude Code 2.1.323
 
 A control tower for Claude Code instances: it sees every one that's running, shows which are waiting for clearance, and takes you to any of them.
 
@@ -40,7 +40,7 @@ Today the only way to find out is to visit each pane and read back through its c
 
 ## 3. Data sources
 
-§3.2–3.5 are Claude Code's internal files, not a documented API. The formats below were read on 2026-11-11 from version 2.1.322, from live files and from Claude Code's own code. §10 covers surviving changes, §14 lists what's still unverified.
+§3.2–3.5 are Claude Code's internal files, not a documented API. The formats below were read on 2026-11-11 from version 2.1.322, from live files and from Claude Code's own code, and rechecked on 2026-11-13 against 2.1.323 with no changes (§14). §10 covers surviving changes, §14 lists what's still unverified.
 
 ### 3.1 Claude's folder
 
@@ -354,8 +354,8 @@ Claude Code updates often and §3 is internal. So:
 - Every field is optional (`#[serde(default)]`); unknown fields and record types are ignored. A missing field empties one column, it doesn't drop the row.
 - A file that fails to parse affects only its row, which shows a `?` badge and the error in the details panel.
 - Unknown `status` and `waitingFor` values are shown raw, never mapped to a guess.
-- The code holds a `VERIFIED_VERSION` (now 2.1.322). If an instance reports a newer `version`, the header shows "⚠ Claude <version> not verified", and `doctor` says what to recheck.
-- Tests use fixtures copied from real files, one folder per verified version (`tests/fixtures/2.1.322/`), with conversation text replaced.
+- The code holds a `VERIFIED_VERSION` (now 2.1.323). If an instance reports a newer `version`, the header shows "⚠ Claude <version> not verified", and `doctor` says what to recheck.
+- Tests use fixtures copied from real files, one folder per verified version (`tests/fixtures/2.1.322/`; a version with no format changes reuses the previous folder), with conversation text replaced.
 
 ## 11. Config and doctor
 
@@ -398,6 +398,12 @@ Checked on the live system:
 - The slug rule holds for `/` and `.`.
 - `claude agents` (its interactive view) lists only background sessions. With 5 instances running in tmux it showed "0 awaiting input · 0 working". `claude agents --json` includes the interactive ones, without tmux location or `waitingFor`.
 - Team configs exist per session, with a lead entry (`backendType: "in-process"`, `tmuxPaneId: "leader"`).
+
+Rechecked 2026-11-13 against Claude Code 2.1.323, with no changes found:
+- Registry files have the same keys as the 2.1.322 fixtures.
+- Team configs have the same shape, including `leadProcess`.
+- 27 transcripts have the same record types and fields as 44 transcripts from 2.1.322, and each `assistant` record still holds one content block.
+- The binary contains the same `waitingFor` strings.
 
 Checked during milestone 1 (same day):
 - `waiting` with `waitingFor: "input needed"`, live, from an instance that asked a question; it showed as `? question` at the top.

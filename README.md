@@ -91,7 +91,7 @@ preview_lines = 15
 
 ## When Claude Code updates
 
-The files read are Claude Code internals, checked against 2.1.322. A newer
+The files read are Claude Code internals, checked against 2.1.323. A newer
 version shows `⚠ Claude <version> not verified` in the header; run
 `claude-tower doctor` and recheck spec §3. Missing fields empty a column, and
 unknown values are shown raw.
