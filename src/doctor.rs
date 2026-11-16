@@ -123,12 +123,17 @@ pub fn run(config: &Config) -> bool {
             ),
         );
     } else {
+        let (noun, verb) = if newer.len() == 1 {
+            ("version", "is")
+        } else {
+            ("versions", "are")
+        };
         r.line(
             Level::Warn,
             format!(
-                "versions {} are newer than the verified {VERIFIED_VERSION}: recheck spec §3 \
+                "{noun} {} {verb} newer than the verified {VERIFIED_VERSION}: recheck spec §3 \
                  (registry fields and status values, transcript record types, team config) \
-                 and add fixtures for the new version",
+                 and add fixtures if a format changed",
                 newer.join(", ")
             ),
         );
